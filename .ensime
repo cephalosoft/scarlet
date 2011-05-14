@@ -1,0 +1,11 @@
+;; This config was generated using ensime-config-gen. Feel free to customize its contents manually.
+
+(
+
+:project-name "Scarlet"
+
+:project-package "org.cephalosoft.scarlet"
+
+:use-maven t
+
+)
