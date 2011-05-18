@@ -10,7 +10,14 @@ class JID (localPart: String, domainPart: String, resourcePart: String) {
   val local = localPart
   val domain = domainPart
   val resource = resourcePart
-  override def toString = local + "@" + domain + "/" + resource
+  override def toString: String = {
+    var string = local + "@" + domain
+    if (resource != null && resource.length > 0)
+      {
+	string += "/" + resource
+      }
+    return string
+  }
 }
 
 object JID {
@@ -33,7 +40,7 @@ object JID {
     return new JID(local, domain, resource)
   }
 
-  def apply(localPart: String, domainPart: String) {
-    return new JID(localPart, domainPart, "")
+  def apply(localPart: String, domainPart: String): JID = {
+    return new JID(localPart, domainPart, null)
   }
 }
