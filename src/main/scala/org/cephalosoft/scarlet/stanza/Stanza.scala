@@ -3,8 +3,8 @@ package org.cephalosoft.scarlet.stanza
 /**
  * Common stanza elements
  */
-abstract class Stanza(f: String, t: String, i: String) {
-  val from = f
-  val to = t
-  val id = i
+abstract class Stanza(from: String, to: String, i: String) {
+  val mFrom = f
+  val mTo = t
+  val mId = i
 }

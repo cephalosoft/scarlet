@@ -1,5 +1,14 @@
 package org.cephalosoft.scarlet.stanza
 
-class Message(b: String, f: String, t: String, i: String) extends Stanza(f, t, i) {
-  val body = b
+import scala.xml._
+
+class Message(body: String, from: String, to: String, id: String) extends Stanza(from, to, id) {
+  val mBody = body
+}
+
+object Message {
+  def apply(stanza: String) = {
+    val xmlStanza = XML.loadString(stanza)
+
+  }
 }
