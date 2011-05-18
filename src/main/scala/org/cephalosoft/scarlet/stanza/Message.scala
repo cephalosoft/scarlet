@@ -9,6 +9,10 @@ class Message(body: String, from: String, to: String, id: String) extends Stanza
 object Message {
   def apply(stanza: String): Message = {
     val xmlStanza = XML.loadString(stanza)
+    return apply(xmlStanza)
+  }
+
+  def apply(xmlStanza: Elem): Message = {
     var from: String = xmlStanza.attributes.get("from").toString
     var to: String = xmlStanza.attributes.get("to").toString
     var body: String = null
