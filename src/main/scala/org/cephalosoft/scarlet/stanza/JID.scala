@@ -32,4 +32,8 @@ object JID {
     }
     return new JID(local, domain, resource)
   }
+
+  def apply(localPart: String, domainPart: String) {
+    return new JID(localPart, domainPart, "")
+  }
 }

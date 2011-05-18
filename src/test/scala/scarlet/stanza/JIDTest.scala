@@ -9,7 +9,12 @@ import org.cephalosoft.scarlet.stanza.JID
 class JIDTestSuite extends Assertions {
 
   @Test def verifyCreateJID {
-    val jid = JID.apply("benjamin@redwoolf.net/empathy")
+    val jid = JID("benjamin@redwoolf.net/empathy")
     assert(jid.toString === "benjamin@redwoolf.net/empathy");
+  }
+
+  @Test def verifyCreateJIDFromLocalPartAndDomain {
+    val jid = JID("jerjanssen", "cephalosoft.org")
+    assert(jid.toString === "jerjanssen@cephalosoft.org")
   }
 }
